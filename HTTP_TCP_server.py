@@ -58,7 +58,8 @@ def createserver():
                 #print(f"OBJECT = {OBJECT}")
                 if (len(OBJECT)>0):
                     HTTP_response(clientsocket, FORM_REPLY+OBJECT)
-            
+                    clientsocket.shutdown(SHUT_WR)
+                   
     except KeyboardInterrupt:
         print("\nShutting down......\n")
     except Exception as exc:
